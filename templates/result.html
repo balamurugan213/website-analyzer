@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if flag1 == 1 %}
+        {% for link in links %}  
+            <h1>{{link.string}}</h1>   
+        {% endfor %}
+    {% endif %}
+    {% if flag1 == 0 %}     
+        <h1>{{links}}</h1>   
+    {% endif %}
+</body>
+</html>
