@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/rsp.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        {% if flag1 == 1 %}
+            <div class="info">
+                <div class="row">
+                    <div class="col title">
+                        <h2>Website Name: </h2>
+                    </div>
+                    <div class="col white">
+                        <h2></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col title">
+                        <h2>Page title: </h2>
+                    </div>
+                    <div class="col white">
+                        <h2>{{info[0]}}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col title">
+                        <h2>Home Page: </h2>
+                    </div>
+                    <div class="col white">
+                        <a href="{{burl}}"></a><h2>{{burl}}</h2>
+                    </div>
+                </div>
+                {% if dis.logo == 1 %}     
+                    <div class="row">
+                        <div class="col title">
+                            <h2>LOGO: </h2>
+                        </div>
+                        <div class="col white">
+                            <a href="{{info[2]}}"><img src="{{info[1]}}" alt=""></a>
+                        </div>
+                    </div>    
+                {% endif %}
+            </div>
+            {% if dis.img == dis.img %}     
+            <div class="imglinks">
+                <h1>Image Links</h1>
+                <div class="images row">
+                    {% for i in ing %}  
+                        <div class="imgbox">
+                            <a href="{{i.href}}"> 
+                            <img src="{{i.src}}" alt="">
+                            </a> 
+                        </div>
+                    {% endfor %}
+                </div>
+            </div> 
+            {% endif %}
+            {% if dis.nav == 1 %}
+            <div class="imp_links">
+                <h1>Important Links:</h1>
+                {% for n in nav %}  
+                <div class="ilink">
+                    <a href="{{n.href}}"><h2>{{n.text}}</h2> </a> 
+                </div>
+                {% endfor %}    
+               
+            </div> 
+            {% endif %}
+            {% if dis.text == 1 %}
+            <div class="text_links col">
+                <h1>TextLinks</h1>
+                <div class="links">
+                    {% for link in links %}  
+                    <div class="row">
+                        <a href="{{link.href}}"><h2>{{link.text}}</h2> </a> 
+                    </div>  
+                    {% endfor %}
+                </div>
+            </div>     
+            {% endif %}
+            <div class="text_links col">
+                <h1>Keywords</h1>
+                <div class="links">
+                <div class="row">
+                    <a href=""><h2>Boox</h2> </a> 
+                </div>
+                <div class="row">
+                    <a href=""><h2>Boox</h2> </a> 
+                </div>
+                <div class="row">
+                    <a href=""><h2>Boox</h2> </a> 
+                </div>
+            </div>
+            </div>
+        {% endif %}
+        {% if flag1 == 0 %}     
+            <a href="#"><h1>{{img}}</h1></a>  
+        {% endif %}
+       
+    </div>
+</body>
+</html>

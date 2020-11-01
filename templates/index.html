@@ -1,13 +1,33 @@
-<html>  
-   <body>  
-      <form action = "http://localhost:5000/admin" method = "post">  
-         <table>  
-        <tr><td>Url</td>  
-        <td><input type ="text" name ="uname"></td></tr>  
-        <!-- <tr><td>Password</td>  
-        <td><input type ="password" name ="pass"></td></tr>   -->
-        <tr><td><input type = "submit"></td></tr>  
-    </table>  
-      </form>  
-   </body>  
-</html>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Analizer</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+<body>
+    <div class="canvas">
+        <div class="box1">
+            <form action = "http://localhost:5000/admin" method = "post">
+                <div class="row title">
+                   <h2>
+                   WEBSITE ANALYZER.
+                   </h2>
+                </div> 
+                <div class="row">
+                   <div class="input col">
+                       <input type ="text" name ="uname">
+                   </div>
+                   <div class="submit btn col">
+                       <input type = "submit">
+                   </div>
+                </div> 
+            </form> 
+        </div>
+        <div class="box2">
+            <img src="{{ url_for('static',filename='WA1-01.svg') }}" alt="">
+        </div>
+    </div>
+</body>
+</html> 
