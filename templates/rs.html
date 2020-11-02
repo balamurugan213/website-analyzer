@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static',filename='styles/rsp.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styl.css') }}">
     <title>Document</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
                         <h2>Website Name: </h2>
                     </div>
                     <div class="col white">
-                        <h2></h2>
+                        <h2>{{name}}</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -85,16 +85,12 @@
             <div class="text_links col">
                 <h1>Keywords</h1>
                 <div class="links">
-                <div class="row">
-                    <a href=""><h2>Boox</h2> </a> 
+                    {% for k in key %}  
+                    <div class="float">
+                        <h2>{{k}}</h2>
+                    </div>
+                    {% endfor %}
                 </div>
-                <div class="row">
-                    <a href=""><h2>Boox</h2> </a> 
-                </div>
-                <div class="row">
-                    <a href=""><h2>Boox</h2> </a> 
-                </div>
-            </div>
             </div>
         {% endif %}
         {% if flag1 == 0 %}     

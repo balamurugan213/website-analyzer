@@ -13,12 +13,20 @@ class BeautifulSoupModule:
 
     url=""
     home_url=''
+    name=''
     status={}
 
     def __init__(self,link):
         self.url = link
-        x = re.findall("https?:\/\/.+.", self.url)
-        self.home_url=x[0]
+        x = re.findall("https?:\/\/.+\.com|https?:\/\/.+\.in", self.url)
+        if x[0]:
+            self.home_url=x[0]
+        if self.home_url[-2:]=="in":
+            print(self.home_url[10:-2])
+            self.name=self.home_url[12:-3]
+        else:
+            print(self.home_url[12:-4])
+            self.name=self.home_url[12:-4]
         # print("home url is")
         # print(self.home_url)
 

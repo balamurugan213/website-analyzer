@@ -50,10 +50,12 @@ def admin():
         burl=soup.home_url
         # 
         bigrams=Nltk_module.BigramModule(keywords)
-        # r=bigrams.FindBigrams()  
-        r=bigrams.FindUnigrams()        
+        r=bigrams.FindBigrams() 
+        rc=bigrams.FindUnigrams()      
+        key=r+rc  
         print(r)
-        return render_template("rs.html",burl=burl,info=info,nav=nav,links=links,ing=img ,dis=dis,flag1 = 1)
+        print(soup.name)
+        return render_template("rs.html",name=soup.name,burl=burl,info=info,nav=nav,links=links,ing=img ,dis=dis,key=key,flag1 = 1)
     except:
         img="some thing went wrong try again"
         return render_template("rs.html", img=img, flag1 = 1)
